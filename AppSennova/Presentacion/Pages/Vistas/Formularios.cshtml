@@ -1,0 +1,163 @@
+﻿@page
+@using AppSennova.Dominio
+@model Presentacion.Pages.FormulariosModel
+@{
+}
+
+
+
+<div class="gym_contenidof">
+    <div class="gym_contenido_logeof">
+        <div class="gym_zona_logeof">
+            <table>
+                <tr>
+                    
+                        <td class="col-xl-3">
+                            <div class="gym_titulo_logeof" style="font-weight: bold; ">REGISTRE VOLTAJE</div>
+                            
+                               
+                               <form id="account" method="post" asp-page-handler="uno">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <table width="50%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="gym_label_tablef">Mes</td>
+                                            <td class="gym_zona_campof"><select asp-for="voltaje.Mes" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                            color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;" 
+                                            asp-items="@Html.GetEnumSelectList<Mes>()" class="form-control">
+                                                    <option >Selecciona el Mes</option>
+                                                    </select></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="gym_label_tablef">Semana</td>
+                                            <td class="gym_zona_campof"><select asp-for="voltaje.Semana" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                            color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;" 
+                                            asp-items="@Html.GetEnumSelectList<Semana>()" class="form-control">
+                                                    <option >Selecciona la semana</option>
+                                                    </select></td>
+                                        </tr>
+
+
+                                          <tr>
+                                            <td class="gym_label_tablef">Día</td>
+                                            <td class="gym_zona_campof"><select asp-for="voltaje.Dia" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                            color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;" 
+                                            asp-items="@Html.GetEnumSelectList<Dia>()" class="form-control">
+                                                    <option >Selecciona el Día</option>
+                                                    </select></td>
+                                        </tr>
+                                        <tr>
+                                             <td class="gym_label_tablef">Hora</td>
+                                            <td class="gym_zona_campof"><input asp-for="voltaje.Hora"style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                            color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;"
+                                             class="form-control" type="time"
+                                                    size="40px" maxlength="50"></td>
+                                            
+                                        </tr>
+                                         <tr>
+                                             <td class="gym_label_tablef">Valor (V)</td>
+                                            <td class="gym_zona_campof"><input asp-for="voltaje.Valor" class="gym_campo_table" type="text"
+                                                    size="40px" maxlength="50"></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center">
+                                                <p></p>
+                                            </td>
+                                        </tr>
+                                       
+                                           <tr>
+                                            <td colspan="2" style="text-align: center" class="gym_bton_logeo2">
+                                                <div class="gym_boton_inicio_1f"><input class="gym_boton_inicio_a"
+                                                        type="submit" value="Registrar"></div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center">
+                                                <p></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            
+                        </td>
+                        <td class="col-xl-3">
+                            <div class="gym_titulo_logeof" style="font-weight: bold; ">REGISTRE CORRIENTE</div>
+                            
+                               <form id="account" method="post" asp-page-handler="dos">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <table width="50%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="gym_label_tablef">Mes</td>
+                                            <td class="gym_zona_campof"><select asp-for="corriente.Mes" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                           color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;" 
+                                            asp-items="@Html.GetEnumSelectList<Mes>()" class="form-control">
+                                                    <option >Selecciona el Mes</option>
+                                                    </select></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="gym_label_tablef">Semana</td>
+                                            <td class="gym_zona_campof"><select asp-for="corriente.Semana" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                            color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;" 
+                                            asp-items="@Html.GetEnumSelectList<Semana>()" class="form-control">
+                                                    <option >Selecciona la semana</option>
+                                                    </select></td>
+                                        </tr>
+
+
+                                          <tr>
+                                            <td class="gym_label_tablef">Día</td>
+                                            <td class="gym_zona_campof"><select asp-for="corriente.Dia" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                            color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;" 
+                                            asp-items="@Html.GetEnumSelectList<Dia>()" class="form-control">
+                                                    <option >Selecciona el Día</option>
+                                                    </select></td>
+                                        </tr>
+                                        <tr>
+                                             <td class="gym_label_tablef">Hora</td>
+                                            <td class="gym_zona_campof"><input asp-for="corriente.Hora" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                           color: rgb(18, 12, 12); padding-top: 5px;	padding-bottom: 5px;"
+                                             class="form-control" type="time"
+                                                    size="40px" maxlength="50"></td>
+                                            
+                                        </tr>
+                                         <tr>
+                                             <td class="gym_label_tablef">Valor (mA)</td>
+                                            <td class="gym_zona_campof"><input asp-for="corriente.Valor" class="gym_campo_table" type="text"
+                                                    size="40px" maxlength="50"></td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center">
+                                                <p></p>
+                                            </td>
+                                        </tr>
+                                       
+                                           <tr>
+                                            <td colspan="2" style="text-align: center" class="gym_bton_logeo2">
+                                                <div class="gym_boton_inicio_1f"><input class="gym_boton_inicio_a"
+                                                        type="submit" value="Registrar"></div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center">
+                                                <p></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            
+                        </td>
+                    
+                </tr>
+            </table>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br> 
+          <p style=" color: white;  text-align: right; display: block; padding: 10px; font-size: x-small "> SayCheeeeeese - Trabajo propio, CC0, <a href="https://commons.wikimedia.org/w/index.php?curid=20061804">https://commons.wikimedia.org/w/index.php?curid=20061804</a>   </p>
+        
+    </div>
+    
+</div>

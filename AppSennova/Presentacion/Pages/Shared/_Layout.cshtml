@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IoT</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/AppSennova.Presentacion.styles.css" asp-append-version="true" />
+</head>
+<body>
+      <header>
+        <div class="gym_encabezado">
+            <div class="gym_logo"></div>
+            <div class="gym_menu">
+                <partial name="_LoginPartial"/>
+            </div>
+        </div>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+	<div class="gym_footer">
+		<div class="gym_textfooter">
+            <table>
+                <tr>
+                    <td class="col-sm-8 col-center sena_logo   "></td>
+                    <td class="col-sm-4" style="text-align: center;">  IoT Fotoceldas es una aplicación desarrollada por SENNOVA <br>
+			Centro de Automatización Industrial  - CAI - SENA CALDAS</td>
+                </tr>
+            </table>
+             
+			
+		</div>
+	</div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

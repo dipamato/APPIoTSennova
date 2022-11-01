@@ -1,0 +1,87 @@
+﻿@page 
+@using AppSennova.Dominio
+@model Presentacion.Pages.DatosCorrienteModel
+@{
+}
+
+
+
+
+<div class="gym_contenido">
+    <div class="gym_contenido_datos">
+        <div class="gym_zona_datos">
+            <table>
+                <tr>
+                    
+                        <td class="col-xl-4">
+                            <div class="gym_titulo_logeo" style="font-weight: bold; ">CORRIENTE</div>
+                            <br>
+                            
+                            <div style="text-align: center;">A continuación podrá seleccionar las caracteristicas para los datos estadisticos:</div>
+                                 
+                                <div class="datos_tablita border" style=""> ► INFORME SEMANAL ◄
+                             <form id="account" method="post" asp-page-handler="dos">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td class="col-sm-1">Semana</td>
+                                            <td class="col-sm-4"><select asp-for="Semana.Semana" style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                           color: rgb(18, 12, 12);" 
+                                            asp-items="@Html.GetEnumSelectList<Semana>()" class="form-control">
+                                                    <option >Selecciona la semana</option>
+                                                    </select></td>
+
+                                            <td class="col-sm-1">Mes</td>
+                                            <td class="col-sm-4"><select asp-for="Semana.Mes"style="background-color: #ebebeb; border: 1px solid #999;border-radius: 8px;
+                                           color: rgb(18, 12, 12);" 
+                                            asp-items="@Html.GetEnumSelectList<Mes>()" class="form-control">
+                                                    <option >Selecciona el Mes</option>
+                                                    </select></td>
+                                        </tr> 
+                                        <tr>
+                                            <td  colspan="2" style="text-align: center">
+                                                <p></p>
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                            <td colspan="6"  style="text-align: center" class="col-sm-3 offset-sm-6 gym_bton_logeo2">
+                                                <div class="gym_↑cio_1"><input class="gym_↑cio_a"
+                                                        type="submit" value="Obtener Datos"></div>
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="text-align: center">
+                                                <p></p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </form>                                      
+                              </div>
+                            
+                        </td>
+                        <td class="col-xl-3">
+                            <div id="container" ><input type="button" onclick="GraficaPastelC(@Model.Resultado)" value="Graficar"></div>
+                            
+                        </td>
+                        <td class="col-xl-3">
+                            <div id="column" ><input type="button" onclick="ColumnasC(@Model.ResultadoM)" value="Graficar Column"></div>
+                               
+                        </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+        
+    </div>
+    
+</div>
+@section Scripts{
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="~/js/ColumnasCorriente.js"></script>
+<script src="~/js/PastelCorriente.js"></script>
+}
